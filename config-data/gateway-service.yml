@@ -17,11 +17,7 @@ spring:
           uri: lb://customer-service
           predicates:
             - Path=/customers/**
-        - id: product-service
-          uri: lb://product-service
+        - id: comunes-query-service
+          uri: lb://comunes-query-service
           predicates:
-            - Path=/products/**
-        - id: shopping-service
-          uri: lb://shopping-service
-          predicates:
-            - Path=/invoices/**
+            - Path=/comunes-query-service/**
