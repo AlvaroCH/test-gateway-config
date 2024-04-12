@@ -9,15 +9,16 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: customer-service
-          uri: lb://customer-service
-          predicates:
-            - Path=/customers/**
-        - id: comunes-query-service
-          uri: lb://comunes-query-service
-          predicates:
-            - Path=/comunes-query-service/**
+      mvc:
+        discovery:
+          locator:
+            enabled: true
+        routes:
+          - id: customer-service
+            uri: lb://customer-service
+            predicates:
+              - Path=/customers/**
+          - id: comunes-query-service
+            uri: lb://comunes-query-service
+            predicates:
+              - Path=/comunes-query-service/**
